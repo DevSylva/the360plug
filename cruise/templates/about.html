@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="ftco-blocks-cover-1">
+      <div class="ftco-cover-1 overlay" style="background-image: url('{% static "images/plug.jpg" %}')">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h1>About Us</h1>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <img src="{% static 'images/hero_1.jpg' %}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-4 ml-auto">
+            <h2>Our History</h2>
+            <p>360 plug is a global place of market sellers</p>
+            <p>We specialize in connecting buyers to sellers in more reliable and easy way</p>
+            <br>
+            <p>We breach the long gap between buyers and sellers and makes business and transactions easy pizzy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5 section-2-title">
+          <div class="col-md-6">
+            <span class="text-primary">Our services</span>
+            <h2 class="mb-4">Check out our service cost</h2>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis provident eius ratione velit, voluptas laborum nemo quas ad necessitatibus placeat?</p> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            {% for i in service %}
+            <div class="careers-1">
+              <center>
+              <span class="roles">{{i.service}}</span>
+              <h3><a href="{% url 'contact' %}">#{{i.cost}}</a></h3>
+              </center>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section section-4">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-md-7">
+            <blockquote class="testimonial-1">
+              <span class="quote quote-icon-wrap"><span class="icon-format_quote"></span></span>
+              <p>Please contact us for the services available and please include the service you want us to deliver</p>
+              <cite><span class="text-black">360plug.ng</span> &mdash; <span class="text-muted">you like we deliver</span></cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}
