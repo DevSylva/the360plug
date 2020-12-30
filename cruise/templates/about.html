@@ -40,17 +40,17 @@
         <div class="row justify-content-center text-center mb-5 section-2-title">
           <div class="col-md-6">
             <span class="text-primary">Our services</span>
-            <h2 class="mb-4">Check out our service cost</h2>
+            <h2 class="mb-4">Check out our services and their cost</h2>
             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis provident eius ratione velit, voluptas laborum nemo quas ad necessitatibus placeat?</p> -->
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
-            {% for i in service %}
+            {% for service in business %}
             <div class="careers-1">
               <center>
-              <span class="roles">{{i.service}}</span>
-              <h3><a href="{% url 'contact' %}">#{{i.cost}}</a></h3>
+              <span class="roles">{{service.product}}</span>
+              <h3><a href="{% url 'contact' %}">#{{service.cost}}</a></h3>
               </center>
             </div>
             {% endfor %}

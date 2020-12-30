@@ -12,9 +12,9 @@ class Message(models.Model):
 	def __str__(self):
 		return str(self.name)
 
-class Service(models.Model):
-	service = models.CharField(max_length=50, null=True)
+class Business(models.Model):
+	product = models.CharField(max_length=50, null=True)
 	cost = models.CharField(max_length=10, null=True, blank=False)
 
 	def __str__(self):
-		return str(self.service)
+		return str(self.product)

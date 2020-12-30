@@ -6,19 +6,17 @@ from .models import *
 # Create your views here.
 
 def index(request):
-    context = {}
+    context = {'business':business}
     return render(request, 'index.html', context)
 
-
-
 def about(request):
-	service = Service.objects.all()
-	context = {'service':service}
-	return render(request, 'about.html', context)
+	context = {'business':business}
+	return render(request, 'services.html', context)
 
+business = Business.objects.all()
 def services(request):
-    context = {}
-    return render(request, 'services.html', context)
+    context = {'business' : business}
+    return render(request, 'about.html', context)
 
 def contact(request):
     context = {}
@@ -38,7 +36,7 @@ def sent(request):
 	messageObj.message = msg
 	messageObj.save()
 
-	context = {}
+	context = {'business':business}
 	return render(request, 'message_sent.html', context)
 
 
